@@ -19,6 +19,8 @@ print(p1.age)
 print(Person.x)
 """
 
+"""
+#Ex.1:
 class A:
     def __init__(self):
         print('one')
@@ -40,3 +42,41 @@ print(x.f())
 
 y = A()
 print(y.f())
+"""
+
+"""
+#Ex.2:
+class A:
+    def __init__(self, a = 5):
+        self.a = a
+
+        def f1(self):
+            self.a += 10
+
+
+class B(A):
+    def __init__(self, b = 0):
+        A.__init__(self, 4)
+        self.b = b
+
+    def f1(self):
+        self.b += 10
+
+x = B()
+x.f1()
+print(x.a,'-', x.b)
+"""
+
+"""
+class class1:
+    a = 1
+
+    def f1(self):
+        a = 2
+        class1.a += 1
+        print(class1.a, end=' ')
+        print(a, end=' ')
+
+class1().f1()
+class1().f1()
+"""

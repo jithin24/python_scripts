@@ -62,6 +62,7 @@ for item in py_gen():
 """
 
 """
+#Ex.3
 def rev_str(my_str):
     print(my_str)
     length = len(my_str)
@@ -78,7 +79,9 @@ def rev_str(my_str):
 for char in rev_str("hello"):
      print(char)
 """
-    
+
+"""
+Ex.4 Factorial of Number
 def printNum(my_num):
     print(my_num)
     length = int(my_num)
@@ -91,3 +94,26 @@ for count in printNum(factNum):
     print(count)
     num = num * count
 print(num)
+"""
+
+"""
+#Ex.5 - Performance of List Comprehension and Generators
+import datetime
+
+def getSquare(num):
+    length = int(num)
+    for i in range(1, length,1):
+        yield i*i
+
+print(datetime.datetime.now())
+f2 = [0, 1]
+for x in range(500000):
+    #f1 = [i**2 for i in range(1, 21)]
+    del f2[:]
+    for count in getSquare(20):
+        f2.append(count)    
+#print(f1)
+print(f2)
+print(datetime.datetime.now())
+
+"""
