@@ -117,3 +117,13 @@ print(f2)
 print(datetime.datetime.now())
 
 """
+
+
+def isPalindrome(num):
+    revStr = num[::-1]
+    if(revStr == num):
+        return True
+    return False
+
+myRes = isPalindrome('121215')
+print(myRes)
