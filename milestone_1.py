@@ -2,7 +2,7 @@
 """
 Created on Wed Jan 16 00:12:32 2019
 
-@author: jith_
+@author: Jithin George
 Milestone project 1 from Python-3 Bootcamp course
 """
 
