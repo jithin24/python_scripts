@@ -6,7 +6,7 @@ Created on Wed Jan 16 00:12:32 2019
 Milestone project 1 from Python-3 Bootcamp course
 """
 
-global board
+board = []
 
 def initialize():
     return [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
