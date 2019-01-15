@@ -115,10 +115,12 @@ for x in range(500000):
 #print(f1)
 print(f2)
 print(datetime.datetime.now())
-
 """
 
 
+
+"""
+#Ex.6 - Palindrome for a String
 def isPalindrome(num):
     revStr = num[::-1]
     if(revStr == num):
@@ -127,3 +129,16 @@ def isPalindrome(num):
 
 myRes = isPalindrome('121215')
 print(myRes)
+"""
+
+
+#Ex.7 - BlackJack Game logic 
+def blackjack(a,b,c):
+    add= sum([a,b,c]);  #sum function accepts a tuple input
+    if add<=21: 
+        return add
+    #Check with Subtract 10 as return should be less than 21
+    elif (a==11 or b==11 or c==11) and (add-10<=21): 
+        return add-10
+    else: 
+        return 'BUST'

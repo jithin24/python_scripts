@@ -1,0 +1,5 @@
+This is a file called as my file.txt
+This is the second line
+This is the third line
+
+Fourth line is added in later on FOUR

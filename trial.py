@@ -54,3 +54,16 @@ gen_exp = (x ** 2 for x in range(10) if x % 2 == 0)
 for x in gen_exp:
     print(x)
 """
+
+
+def myfunc(inpString):
+    tempList = []
+    strLength=len(inpString)
+    for pos in range(0,strLength,1):
+        if pos%2 == 0:
+            tempList.append(inpString[pos].upper())
+            #print(inpString[pos].upper())
+        else:
+            tempList.append(inpString[pos].lower())
+            #print(inpString[pos].lower())
+    return ''.join(tempList)
