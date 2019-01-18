@@ -80,3 +80,35 @@ class class1:
 class1().f1()
 class1().f1()
 """
+
+class Animal():
+    
+    def __init__(self, name):
+        print("Animal Class setup")
+        self.name = name
+
+    def __str__(self):
+        #Take care to use return
+        return (f"My Animal name is {self.name}")
+        
+    def who_am_i(self):
+        print("This is an Animal Class")
+    
+    def eat(self):
+        print("Love eating")
+        
+class Dog(Animal):
+    
+    def __init__(self, name):
+        Animal.__init__(self, name)
+        print("Dog Class created")
+
+    def who_am_i(self):
+        print("I am a Dog Class Object")  
+        
+
+myAnimal = Animal(name="Leo")
+myDog= Dog(name="Jax")
+
+myDog.who_am_i()
+print(myDog)

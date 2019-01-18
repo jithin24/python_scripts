@@ -133,12 +133,15 @@ print(myRes)
 
 
 #Ex.7 - BlackJack Game logic 
-def blackjack(a,b,c):
-    add= sum([a,b,c]);  #sum function accepts a tuple input
-    if add<=21: 
-        return add
+def blackjack(a_card,b_card,c_card):
+    '''
+    Function runs a BlackJack logic and returns result to user
+    '''
+    add_cards=sum([a_card,b_card,c_card]) #sum function accepts a tuple input
+    if add_cards<=21:
+        return add_cards
     #Check with Subtract 10 as return should be less than 21
-    elif (a==11 or b==11 or c==11) and (add-10<=21): 
-        return add-10
-    else: 
+    elif (a_card==11 or b_card==11 or c_card==11) and (add_cards-10<=21):
+        return add_cards-10
+    else:
         return 'BUST'
