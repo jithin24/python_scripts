@@ -56,6 +56,8 @@ for x in gen_exp:
 """
 
 
+"""
+Ex.2 
 def myfunc(inpString):
     tempList = []
     strLength=len(inpString)
@@ -67,3 +69,34 @@ def myfunc(inpString):
             tempList.append(inpString[pos].lower())
             #print(inpString[pos].lower())
     return ''.join(tempList)
+"""
+
+"""
+Ex.3 Python BootCamp Exercises
+"""
+
+print("Binary- ", bin(1024))
+print("Hex- ", hex(1024))
+s = 'hello how are you Mary, are you feeling okay?'
+print("Check if all lower- ", s.islower())
+
+s = 'twywywtwywbwhsjhwuwshshwuwwwjdjdid'
+print("Count of w- ", s.count('w'))
+
+set1 = {2,3,1,5,6,8}
+set2 = {3,1,7,5,6,8}
+
+set3 = set1 | set2
+print(set3)
+print("Only in set 1- ", set3.symmetric_difference(set2))
+
+print("Difference- ", set1.difference(set2))
+
+print("Intersection :", set1 & set2)
+
+list1 = [1,2,3,4]
+list1.reverse()
+print("reverse- ", list1)
+
+dict = {x:x**3 for x in range(5)}
+print("Dictionary- ", dict)
