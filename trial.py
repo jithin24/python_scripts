@@ -73,7 +73,6 @@ def myfunc(inpString):
 
 """
 Ex.3 Python BootCamp Exercises
-"""
 
 print("Binary- ", bin(1024))
 print("Hex- ", hex(1024))
@@ -100,3 +99,61 @@ print("reverse- ", list1)
 
 dict = {x:x**3 for x in range(5)}
 print("Dictionary- ", dict)
+
+"""
+
+
+"""
+Ex.4 Handling Random words from dictionary File
+Hangman Game
+"""
+import random
+
+def display_word(p_word):
+    print(p_word)
+
+def set_letter(p_letter, pos):
+    return [w.replace('_', p_letter.upper()) if (l==pos and w=='_') 
+            else w for l,w in enumerate(guessList)]
+
+fr=open('sowpods_dictionary.txt','r')
+wdList=fr.readlines()
+hangStr = random.choice(wdList)
+#print('Total Words: ', hangStr)
+hangList=list(hangStr)
+hangList.pop()
+#print(hangList) 
+fr.close()
+
+guessList = ['_']*len(hangList)
+print("Let's start the Hangman Game\nYou have 10 shots to guess this one")
+display_word(guessList)
+score=100
+inpSet=set({})
+while(True):
+    inp=input(f"Guess a Letter from this Word skip:{inpSet}\n")
+    count_underscores=guessList.count('_')
+    if(inp.lower()=='score'):
+        print(score)
+    else:
+        inp_pos=lambda inp:[l for l,x in enumerate(hangList) if x==inp]
+        pos_list=inp_pos(inp.upper())
+        for p in pos_list:
+            guessList=set_letter(inp,p)
+        post_count_underscores=guessList.count('_')
+        display_word(guessList)
+        if(post_count_underscores==0):
+            print(f'You win!!! Score:{score}')
+            break
+        elif(post_count_underscores<count_underscores):
+            inpSet.add(inp)
+            print('Found- Letter inserted')
+        else:
+            score -= 10
+            inpSet.add(inp)
+            print('Sorry! Not Found')
+        if(score>0):
+            pass
+        else:
+            print(f"You have exhausted your guess limit\nWord: {hangStr}")
+            break
