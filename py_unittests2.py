@@ -42,23 +42,24 @@ class TestCircleCreation(unittest.TestCase):
         # Try Defining a circle 'c' with radius -2.5 and see 
         # if it raises a ValueError with the message
         # "radius must be between 0 and 1000 inclusive"
-        #self.assertEqual(c.radius,-2.5)
-        self.assertRaises(ValueError, Circle, -2.5)
-             
+        with self.assertRaises(ValueError):
+            c=Circle(-2.5)
+            self.assertEqual(c.radius,-2.5)
 
     def test_creating_circle_with_greaterthan_radius(self):
         # Try Defining a circle 'c' with radius 1000.1 and see 
         # if it raises a ValueError with the message
-        # "radius must be between 0 and 1000 inclusive"
-        #self.assertEqual(c.radius,1000.1)
-        self.assertRaises(ValueError, Circle, 1000.1) 
-              
+        # "radius must be between 0 and 1000 inclusive"        
+        with self.assertRaises(ValueError):
+            c=Circle(1000.1)
+            self.assertEqual(c.radius,1000.1)
 
     def test_creating_circle_with_nonnumeric_radius(self):
         # Try Defining a circle 'c' with radius 'hello' and see 
         # if it raises a TypeError with the message
-        # "radius must be a number"
-        #self.assertEqual(c.radius,'hello')
-        self.assertRaises(TypeError, Circle, 'hello')
+        # "radius must be a number"       
+        with self.assertRaises(TypeError):
+            c=Circle('hello')
+            self.assertEqual(c.radius, 'hello')
         
     

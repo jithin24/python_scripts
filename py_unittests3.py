@@ -32,7 +32,7 @@ class Circle:
         return round(x,2)
     
     
-class TestCircleCreation(unittest.TestCase):
+class TestCircleArea(unittest.TestCase):
 
     def test_creating_circle_with_numeric_radius(self):
         # Define a circle 'c1' with radius 2.5 and check if 
@@ -48,8 +48,7 @@ class TestCircleCreation(unittest.TestCase):
         
     def test_circlearea_with_max_radius(self):
         # Define a circle 'c3' with radius 1000.1 and check if 
-        # it's area is 3141592.65
-        self.assertRaises(ValueError, Circle, 1000.1) 
-        c3=Circle(1000.1)
+        # it's area is 3141592.65 
+        c3=Circle(1000)
         self.assertEqual(c3.area(),3141592.65)
     
