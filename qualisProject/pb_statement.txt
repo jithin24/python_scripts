@@ -1,0 +1,58 @@
+Create a folder named 'Project', mkdir Project.
+Move to folder 'Project', cd Project.
+Create two subfolders 'proj' and 'test' inside the 'Project' folder, mkdir proj test.
+Create an empty 'init.py' inside the 'proj' folder, touch proj/__init__.py`.
+Create an empty 'init.py' inside the 'test' folder, touch test/__init__.py`.
+Open the 'proj/inventory.py' file by using vim editor vim proj/inventory.py.
+Press I to insert content in the file.
+Define a child class 'InsufficientException' derived from 'Exception' as follows: py
+class InsufficientException(Exception):
+  pass
+Define a class 'MobileInventory' with the following specifications:
+
+Define the class method '__init__', which initializes an instance of 'MobileInventory' and accepts an input through the argument 'inventory', and assigns the value to the attribute 'balance_inventory'.
+By default, the 'inventory' argument's value is 'None'. If no input value is passed to the argument 'inventory', the attribute 'balance_inventory' is set to an empty dictionary- {}.
+The input value passed to the argument 'inventory' must be a dictionary. If the input is not a dictionary, raise a TypeError Exception with the message "Input inventory must be a dictionary".
+Keys of the dictionary must be a string, representing mobile model names. If the given key is not a string, raise ValueError with the message "Mobile model name must be a string".
+Values of the dictionary must be positive integers, representing the number of available handsets corresponding to various mobile models. If the given value is not a positive integer, raise ValueError with the message "No. of mobiles must be a positive integer".
+A sample input dictionary can be {'iPhone Model X':100, 'Xiaomi Model Y': 1000, 'Nokia Model Z':25}.
+
+
+Define the class method 'add_stock', which adds new stock of mobiles to existing inventory. It accepts an input through the argument new_stock, and updates the 'balance_inventory'. based on the input new_stock.
+The input value passed to 'new_stock' argument must be a dictionary. If the input is not a dictionary, raise a TypeError Exception with the message "Input stock must be a dictionary".
+Keys of the dictionary must be a string, representing mobile model names. If the given key is not a string, raise a ValueError with the message "Mobile model name must be a string".
+Values of the dictionary must be positive integers, representing the number of available handsets corresponding to various mobile models. If the given value is not a positive integer, raise a ValueError with the message "No. of mobiles must be a positive integer".
+
+
+Define the class method 'sell_stock', which sells the request mobile handsets to customers. It accepts an input through the argument requested_stock, and updates the 'balance_inventory' attribute based on the input requested_stock.
+The input value passed to the 'requested_stock' argument must be a dictionary. If the input is not a dictionary, raise a TypeError Exception with the message "Requested stock must be a dictionary".
+Keys of the dictionary must be a string, representing mobile model names. If the given key is not a string, raise ValueError with the message "Mobile model name must be a string".
+Values of the dictionary must be positive integers, representing the number of available handsets corresponding to various mobile models. If the given value is not a positive integer, raise a ValueError with the message "No. of mobiles must be a positive integer".
+Before selling, check if the requested mobile handset model is part of the existing inventory. If not, raise an InsufficientException with the error message "No Stock. New Model Request".
+If the requested number of mobile handsets are not available in the inventory, raise an InsufficientException with the error message "Insufficient Stock".
+Save the file by pressing the Esc key and typing :wq in the editor.
+
+Click Continue after successful completion of Task 1.
+
+
+
+
+
+
+
+
+
+
+Define another pytest test class 'TestInventorySellStock', which tests the behavior of the 'sell_stock' method, with the following tests:
+
+Define a pytest class fixture 'setup_class', which creates an 'MobileInventory' instance with the input {'iPhone Model A':50, 'Xiaomi Model B': 2000, 'Nokia Model C':10, 'Sony Model D':1}, and assign it to the class attribute 'inventory'.
+Define a pytest test method 'test_sell_stock_as_dict', which sells the requested stock {'iPhone Model A':2, 'Xiaomi Model B':20, 'Sony Model D':1} from the existing inventory, and update the balance_inventory attribute. Also check if the updated balance_inventory equals {'iPhone Model A':48, 'Xiaomi Model B': 1980, 'Nokia Model C':10, 'Sony Model D':0}.
+Define a pytest test method 'test_sell_stock_as_list', which tries selling the requested stock ['iPhone Model A', 'Xiaomi Model B', 'Nokia Model C'] from the existing inventory, and raises a TypeError with the message "Requested stock must be a dictionary".
+Define a pytest test method 'test_sell_stock_with_numeric_keys', which tries selling the requested stock {1:'iPhone Model A', 2:'Xiaomi Model B', 3:'Nokia Model C'} from the existing inventory, and raises ValueError with the message "Mobile model name must be a string".
+Define a pytest test method 'test_sell_stock_with_nonnumeric_values', which tries selling the requested stock {'iPhone Model A':'2', 'Xiaomi Model B':'3', 'Nokia Model C':'4'} from the existing inventory, and raises a ValueError with the message "No. of mobiles must be a positive integer".
+Define a pytest test method 'test_sell_stock_with_float_values', which tries selling the requested stock {'iPhone Model A':2.5, 'Xiaomi Model B':3.1, 'Nokia Model C':4} from the existing inventory, and raises a ValueError with the message "No. of mobiles must be a positive integer".
+Define a pytest test method 'test_sell_stock_of_nonexisting_model', which tries selling the requested stock {'iPhone Model B':2, 'Xiaomi Model B':5} from the existing inventory, and raises an InsufficientException with the message "No Stock. New Model Request".
+Define a pytest test method 'test_sell_stock_of_insufficient_stock', which tries selling the requested stock {'iPhone Model A':2, 'Xiaomi Model B':5, 'Nokia Model C': 15} from the existing inventory, and raises an InsufficientException with the message "Insufficient Stock".
+Click Submit after successful completion of Task 4, and check the final status.
+
+

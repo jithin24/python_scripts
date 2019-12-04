@@ -1,0 +1,6 @@
+{
+  "test_inventory.py": true,
+  "test_inventory.py::TestingInventoryCreation::()::test_creating_empty_inventory": true,
+  "test_inventory.py::TestingInventoryCreation::()::test_creating_inventory_with_list": true,
+  "test_inventory.py::TestingInventoryCreation::()::test_creating_specified_inventory": true
+}

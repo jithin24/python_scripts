@@ -1,0 +1,5 @@
+{
+  "Project/proj/test_inventory.py": true,
+  "Project/test/test_inventory2.py::TestInventoryAddStock::()::test_add_new_stock_as_dict": true,
+  "test_math_calc.py": true
+}
